@@ -18,8 +18,6 @@
           <div class="container">
             <a href="index.html"><img src="img/Logo.png" class="brand-logo" style="height: 40px; margin-top: 5px;" /></a>
             <ul id="nav-mobile" class="right" style="margin-top:-7px;">
-              <li><a href="https://github.com/Coralise/CustomBansPlus/wiki"><i class="material-icons left grey-text">book</i>Wiki</a></li>
-              <li><a href="download.html"><i class="material-icons left grey-text">file_download</i>Download Now</a></li>
             </ul>
           </div>
         </div>
@@ -45,7 +43,7 @@
         <div class="card horizontal grey darken-4 hoverable">
           <div class="card-stacked">
             <div class="card-content">
-              <span class="card-title">Random Arsenal</span>
+              <span class="card-title">From the Arsenal</span>
               <div id="randName" class="right">Name</div><br>
               <div id="randPrice" class="right">Price</div>
             </div>
@@ -86,6 +84,12 @@
     </div>
 
     <div class="container">
+      <div class="row">
+        <div class="right">
+          <ul id="listPagination" class="pagination">
+          </ul>
+        </div>
+      </div>
       <div id="divList" class="row">
       </div>
     </div>
@@ -94,9 +98,9 @@
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <h5 class="grey-text monospace bold text-shadow">Support our Developers! 💕</h5>
-            <p class="grey-text text-lighten-4">If you like our plugins, feel free to leave a coffee for one of us! It'll surely make our day happier.</p>
-            <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support us with a coffee!', '#29abe0', 'A0A838CB2');kofiwidget2.draw();</script> 
+            <h5 class="grey-text monospace bold text-shadow">Support the Developer! 💕</h5>
+            <p class="grey-text text-lighten-4">If you like my plugins, feel free to leave a coffee! It'll surely make my day happier.</p>
+            <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Send us some coffee!', '#29abe0', 'A0A838CB2');kofiwidget2.draw();</script> 
             <div id="donate-button-container" class="top-margin">
               <div id="donate-button"></div>
               <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
@@ -117,9 +121,7 @@
             <h5 class="grey-text monospace bold text-shadow">Links</h5>
             <ul>
               <li><a class="blue-text text-darken-3" href="https://discord.io/CoralReef" target=”_blank”>Discord</a></li>
-              <li><a class="deep-purple-text text-darken-1" href="https://github.com/Coralise/CustomBansPlus/wiki" target=”_blank”>Github Wiki</a></li>
-              <li><a class="orange-text text-darken-3" href="https://www.spigotmc.org/resources/custom-bans-plus-fully-customizable-ban-manager.89075/" target=”_blank”>SpigotMC</a></li>
-              <li><a class="orange-text text-darken-4" href="https://dev.bukkit.org/projects/custom-bans-plus-fully-customizable-ban-manager" target=”_blank”>Curseforge</a></li>
+              <li><a class="deep-purple-text text-darken-1" href="https://github.com/Coralise/EDP-SA1" target=”_blank”>Github Repo</a></li>
             </ul>
           </div>
         </div>
@@ -183,7 +185,7 @@
       });
 
       $(".catButton").on("click", function() {
-        populateList($(this).data("category"));
+        populateList($(this).data("category"), 1);
       });
 
       function loadClicks() {
@@ -211,6 +213,7 @@
         db.collection(c).get().then(sc => {
           $("#modalTBody").html("");
           if (sc == null) return;
+          if (sc.length == undefined) loadSales(id);
           for (var i = 0;i < sc.length;i++) {
 
             var html = `
@@ -262,11 +265,13 @@
       //   </div>
       // </div>
 
-      function populateList(category) {
+      var gCat;
+      function populateList(category, page) {
+        gCat = category;
         $("#divList").html("");
         db.collection("prods").get().then(prods => {
           var rows = [];
-          for (var i = 0,j = 0;i < prods.length && i-j < 16;i++) {
+          for (var i = 16*(page-1),j = 0;i < prods.length && i-j < 16*page;i++) {
 
             if (category != "all" && prods[i]["category"] != category) {
               j++;
@@ -282,9 +287,33 @@
           }
 
           for (var i = 0;i < rows.length;i++) $("#divList").append(rows[i]);
+            
+          loadPagination(page);
+
           var elems = document.querySelectorAll('.tooltipped');
           var instances = M.Tooltip.init(elems);
           loadClicks();
+        });
+      }
+
+      function loadPagination(page) {
+          $("#listPagination").html("");
+        db.collection("prods").get().then(prods => {
+            var html = '<li class="'+ (page==1 ? "disabled" : "waves-effect") +' updatePage" data-updated-page="'+ (parseInt(page)-1) +'"><a href="#!"><i class="material-icons">chevron_left</i></a></li>';
+            for (var i = 1;i <= Math.ceil(prods.length/16);i++) {
+              html = html + '<li class="updatePage '+ (i == page ? "active orange darken-3" : "waves-effect") +'" data-updated-page="'+ i +'"><a href="#!">'+ i +'</a></li>';
+            }
+          html = html + '<li class="updatePage '+ (Math.ceil(prods.length/16)==page ? "disabled" : "waves-effect") +'" data-updated-page="'+ (parseInt(page)+1) +'"><a href="#!"><i class="material-icons">chevron_right</i></a></li>';
+
+          $("#listPagination").append(jQuery.parseHTML(html));
+          loadPageClicks();
+        });
+      }
+
+      function loadPageClicks() {
+        $(".updatePage").on("click", function() {
+          if ($(this).hasClass("disabled")) return;
+          populateList(gCat, $(this).data("updatedPage"));
         });
       }
 
@@ -359,14 +388,14 @@
                     description: data[i]["description"],
                     category: data[i]["category"]
                   }).then(res => {
-                    populateList("all");
+                    populateList("all", 1);
                     pickRandom();
                   })
                 }
               }
             });
           } else {
-            populateList("all");
+            populateList("all", 1);
             pickRandom();
           }
         });

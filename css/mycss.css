@@ -146,6 +146,14 @@ input.page[type=number] {
     border-radius: 10px;
 }
 
+.round-corners-left-low {
+    border-radius: 10px 0px 0px 10px;
+}
+
+.round-corners-right-low {
+    border-radius: 0px 10px 10px 0px;
+}
+
 .round-corners-mid {
     border-radius: 20px;
 }

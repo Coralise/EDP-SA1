@@ -38,5 +38,133 @@
         "image": "img/products/colt1911.jpg",
         "description": "A single-action, semi-automatic, magazine-fed, recoil-operated pistol chambered for the .45 ACP cartridge.",
         "category": "handguns"
+    },
+    {
+        "id": 6,
+        "name": "AAC Honey Badger",
+        "price": "₱3499.99",
+        "image": "img/products/aachoneybadger.jpg",
+        "description": "An integrally suppressed personal defense weapon based on the AR-15. It is chambered in .300 AAC Blackout and was originally produced by Advanced Armament Corporation (AAC).",
+        "category": "assaultRifles"
+    },
+    {
+        "id": 7,
+        "name": "AEK-971",
+        "price": "₱4299.99",
+        "image": "img/products/aek971.jpg",
+        "description": "The AEK-971 is based on previous AK rifles in internal design and layout, but features a Balanced Automatics Recoil System (BARS) that enhances the traditional Kalashnikov long stroke gas piston operating system by reducing the negative effects of recoil.",
+        "category": "assaultRifles"
+    },
+    {
+        "id": 8,
+        "name": "Colt AR-15",
+        "price": "₱2799.99",
+        "image": "img/products/coltar15.jpg",
+        "description": "A lightweight, magazine-fed, gas-operated semi-automatic rifle. It is a semi-automatic version of the M16 rifle sold for the civilian and law enforcement markets in the United States.",
+        "category": "assaultRifles"
+    },
+    {
+        "id": 9,
+        "name": "Barrett REC7",
+        "price": "₱2499.99",
+        "image": "img/products/barrettrec7.jpg",
+        "description": "An American firearm manufactured as a selective-fire fully-automatic and semi-automatic rifle by Barrett Firearms.",
+        "category": "assaultRifles"
+    },
+    {
+        "id": 10,
+        "name": "FAMAE SAF",
+        "price": "₱1899.99",
+        "image": "img/products/famaesaf.jpg",
+        "description": "A blowback-operated select-fire submachine gun, firing from a closed bolt. It is based on the Swiss SIG SG 540 assault rifle which was produced under license in Chile in the 1980s.",
+        "category": "submachineGuns"
+    },
+    {
+        "id": 11,
+        "name": "HK P30L",
+        "price": "₱1099.99",
+        "image": "img/products/hkp30l.jpg",
+        "description": "A recent HK pistol design, the P30 is a modern police and security pistol that combines function and safety.",
+        "category": "handguns"
+    },
+    {
+        "id": 12,
+        "name": "Staccato P",
+        "price": "₱999.99",
+        "image": "img/products/staccatop.jpg",
+        "description": "The Staccato P has never failed a law enforcement department evaluation, including drop, accuracy, reliability, and endurance testing.",
+        "category": "handguns"
+    },
+    {
+        "id": 7,
+        "name": "name",
+        "price": "₱4299.99",
+        "image": "img/products/aek971.jpg",
+        "description": "desc",
+        "category": "assaultRifles"
+    },
+    {
+        "id": 7,
+        "name": "name",
+        "price": "₱4299.99",
+        "image": "img/products/aek971.jpg",
+        "description": "desc",
+        "category": "assaultRifles"
+    },
+    {
+        "id": 7,
+        "name": "name",
+        "price": "₱4299.99",
+        "image": "img/products/aek971.jpg",
+        "description": "desc",
+        "category": "assaultRifles"
+    },
+    {
+        "id": 7,
+        "name": "name",
+        "price": "₱4299.99",
+        "image": "img/products/aek971.jpg",
+        "description": "desc",
+        "category": "assaultRifles"
+    },
+    {
+        "id": 7,
+        "name": "name",
+        "price": "₱4299.99",
+        "image": "img/products/aek971.jpg",
+        "description": "desc",
+        "category": "assaultRifles"
+    },
+    {
+        "id": 7,
+        "name": "name",
+        "price": "₱4299.99",
+        "image": "img/products/aek971.jpg",
+        "description": "desc",
+        "category": "assaultRifles"
+    },
+    {
+        "id": 7,
+        "name": "name",
+        "price": "₱4299.99",
+        "image": "img/products/aek971.jpg",
+        "description": "desc",
+        "category": "assaultRifles"
+    },
+    {
+        "id": 7,
+        "name": "name",
+        "price": "₱4299.99",
+        "image": "img/products/aek971.jpg",
+        "description": "desc",
+        "category": "assaultRifles"
+    },
+    {
+        "id": 7,
+        "name": "name",
+        "price": "₱4299.99",
+        "image": "img/products/aek971.jpg",
+        "description": "desc",
+        "category": "assaultRifles"
     }
 ]
