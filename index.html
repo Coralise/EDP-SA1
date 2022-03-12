@@ -53,7 +53,7 @@
             </div>
           </div>
           <div class="card-image">
-            <img id="randImage" src="">
+            <img id="randImage" style="height:130px;object-fit: cover;" src="">
           </div>
         </div>
       </div>
@@ -143,7 +143,7 @@
       <div class="modal-content">
         <div class="row">
           <div class="col l6">
-            <img id="modalImg" src="img/products/beretta92.jpg" class="width-100">
+            <img id="modalImg" src="img/products/beretta92.jpg" class="width-100 materialboxed">
             <h5 id="modalName">Name</h5>
             <p id="modalCategory">Category</p>
             <p id="modalDesc">Description</p>
@@ -380,7 +380,7 @@
           <div class="col l3">
             <div class="card sticky-action grey darken-3 hoverable">
               <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator tooltipped" data-position="top" data-tooltip="Click for more info" src="`+ prod["image"] +`">
+                <img class="activator tooltipped" style="height:150px;object-fit: cover;" data-position="top" data-tooltip="Click for more info" src="`+ prod["image"] +`">
               </div>
               <div class="card-content activator">
                 <p class="activator">`+ prod["name"] +`</p>
@@ -423,6 +423,8 @@
         var instances = M.Carousel.init(elems);
         var modalElems = document.querySelectorAll('.modal');
         var modalInstances = M.Modal.init(modalElems);
+        var elems = document.querySelectorAll('.materialboxed');
+        var instances = M.Materialbox.init(elems);
 
         loadDatabase();
 
