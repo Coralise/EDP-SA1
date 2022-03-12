@@ -96,75 +96,75 @@
         "category": "handguns"
     },
     {
-        "id": 7,
-        "name": "name",
-        "price": "₱4299.99",
-        "image": "img/products/aek971.jpg",
-        "description": "desc",
+        "id": 13,
+        "name": "Ruger American Rifle",
+        "price": "₱3499.99",
+        "image": "img/products/rugeramerican.jpg",
+        "description": "Budget-level hunting/sporting bolt-action centerfire rifle made by Sturm, Ruger & Co.",
+        "category": "rifles"
+    },
+    {
+        "id": 14,
+        "name": "Krag-Jørgensen",
+        "price": "₱2199.99",
+        "image": "img/products/krag.jpg",
+        "description": "A repeating bolt-action rifle designed by the Norwegians Ole Herman Johannes Krag and Erik Jørgensen in the late 19th century.",
+        "category": "rifles"
+    },
+    {
+        "id": 15,
+        "name": "Brügger & Thomet APC",
+        "price": "₱1999.99",
+        "image": "img/products/batapc.jpg",
+        "description": "Uses a straight blowback gas system. The addition of a proprietary hydraulic buffer system in the receiver back plate helps control recoil. More than 50% of the APC's parts are interchangeable between the different platforms.",
+        "category": "submachineGuns"
+    },
+    {
+        "id": 16,
+        "name": "Mossberg MVP",
+        "price": "₱3699.99",
+        "image": "img/products/mossberg.jpg",
+        "description": "Newest addition to Mossberg's rifle line, it is meant to work with after-market AR magazines and is chambered in 5.56 NATO, versus standard .223 Remington, in order for customers to take advantage of surplus 5.56 NATO ammo which varies slightly from factory .223 Rem rounds.",
+        "category": "rifles"
+    },
+    {
+        "id": 17,
+        "name": "AR-57",
+        "price": "₱2099.99",
+        "image": "img/products/ar57.jpg",
+        "description": "Also known as the AR Five Seven , the AR-57 is available as either an upper receiver for the AR-15/M16 rifle or a complete rifle, firing 5.7×28mm rounds from standard FN P90 magazines.",
+        "category": "submachineGuns"
+    },
+    {
+        "id": 18,
+        "name": "BR18",
+        "price": "₱3999.99",
+        "image": "img/products/br18.jpg",
+        "description": "A bullpup assault rifle made by ST Kinetics of Singapore. It's barrel is coated with a proprietary dry lubricant which repels sand, dust, and gunpowder soot for easier maintenance. The rifle is also designed to be over the beach (OTB) capable, enabling the operator to safely fire after submerging the rifle in water.",
         "category": "assaultRifles"
     },
     {
-        "id": 7,
-        "name": "name",
-        "price": "₱4299.99",
-        "image": "img/products/aek971.jpg",
-        "description": "desc",
-        "category": "assaultRifles"
+        "id": 19,
+        "name": "Remington Model 700",
+        "price": "₱2999.99",
+        "image": "img/products/remingtonmodel700.jpg",
+        "description": "A manually operated bolt action with two forward dual-opposed lugs. The bolt face is recessed, fully enclosing the base of the cartridge, the extractor is a C-clip sitting within the bolt face.",
+        "category": "rifles"
     },
     {
-        "id": 7,
-        "name": "name",
-        "price": "₱4299.99",
-        "image": "img/products/aek971.jpg",
-        "description": "desc",
-        "category": "assaultRifles"
+        "id": 20,
+        "name": "CS/LS06",
+        "price": "₱1299.99",
+        "image": "img/products/csls06.jpg",
+        "description": "A blowback-operated weapon chambered for the 9 × 19 mm cartridge. It fires from a closed bolt of a telescoped design, which wraps around the barrel. The weapon feeds ammunition from a 50-round helical magazine located at the top of the polymer receiver.",
+        "category": "submachineGun"
     },
     {
-        "id": 7,
-        "name": "name",
-        "price": "₱4299.99",
-        "image": "img/products/aek971.jpg",
-        "description": "desc",
-        "category": "assaultRifles"
-    },
-    {
-        "id": 7,
-        "name": "name",
-        "price": "₱4299.99",
-        "image": "img/products/aek971.jpg",
-        "description": "desc",
-        "category": "assaultRifles"
-    },
-    {
-        "id": 7,
-        "name": "name",
-        "price": "₱4299.99",
-        "image": "img/products/aek971.jpg",
-        "description": "desc",
-        "category": "assaultRifles"
-    },
-    {
-        "id": 7,
-        "name": "name",
-        "price": "₱4299.99",
-        "image": "img/products/aek971.jpg",
-        "description": "desc",
-        "category": "assaultRifles"
-    },
-    {
-        "id": 7,
-        "name": "name",
-        "price": "₱4299.99",
-        "image": "img/products/aek971.jpg",
-        "description": "desc",
-        "category": "assaultRifles"
-    },
-    {
-        "id": 7,
-        "name": "name",
-        "price": "₱4299.99",
-        "image": "img/products/aek971.jpg",
-        "description": "desc",
+        "id": 21,
+        "name": "FN SCAR-H",
+        "price": "₱4499.99",
+        "image": "img/products/fnscarh.jpg",
+        "description": "The FN SCAR-H is chambered in 7.62x51mm NATO calibre and is available with barrels of various lengths (13” or 16”) . These barrels are interchangeable in less than 5 minutes.",
         "category": "assaultRifles"
     }
 ]
