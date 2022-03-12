@@ -61,7 +61,7 @@
     <div class="container">
       <div class="carousel">
         <a class="carousel-item center white-text catButton" data-category="all"><div>
-          <img src="img/Gun.jpg" style="width:100%;">
+          <img src="img/arsenal.jpg" style="width:100%;">
           <span>All Firearms</span>
         </div></a>
         <a class="carousel-item center white-text catButton" data-category="handguns"><div>
@@ -69,15 +69,15 @@
           <span>Handguns</span>
         </div></a>
         <a class="carousel-item center white-text catButton" data-category="rifles"><div>
-          <img src="img/Gun.jpg" style="width:100%;">
+          <img src="img/rifle.jpg" style="width:100%;">
           <span>Rifles</span>
         </div></a>
         <a class="carousel-item center white-text catButton" data-category="submachineGuns"><div>
-          <img src="img/Gun.jpg" style="width:100%;">
+          <img src="img/submachinegun.jpg" style="width:100%;">
           <span>Submachine Guns</span>
         </div></a>
         <a class="carousel-item center white-text catButton" data-category="assaultRifles"><div>
-          <img src="img/Gun.jpg" style="width:100%;">
+          <img src="img/assaultrifle.jpg" style="width:100%;">
           <span>Assault Rifles</span>
         </div></a>
       </div>
@@ -202,18 +202,16 @@
             $("#modalPrice").text(prod["price"]);
             $("#modalDesc").text(prod["description"]);
             $("#modalImg").attr("src", prod["image"]);
+            loadSales(id);
           });
 
-          loadSales(id);
         });
       }
 
       function loadSales(id) {
+        $("#modalTBody").html("");
         var c = "salesCount-" + id;
         db.collection(c).get().then(sc => {
-          $("#modalTBody").html("");
-          if (sc == null) return;
-          if (sc.length == undefined) loadSales(id);
           for (var i = 0;i < sc.length;i++) {
 
             var html = `
@@ -278,7 +276,7 @@
               continue;
             }
 
-            if (i%4 == 0) {
+            if ((i-j)%4 == 0) {
               rows.push($("<div></div>").addClass("row"));
             }
 
@@ -297,8 +295,9 @@
       }
 
       function loadPagination(page) {
-          $("#listPagination").html("");
+        $("#listPagination").html("");
         db.collection("prods").get().then(prods => {
+            if (gCat != "all") prods = prods.filter(p=>p["category"] == gCat);
             var html = '<li class="'+ (page==1 ? "disabled" : "waves-effect") +' updatePage" data-updated-page="'+ (parseInt(page)-1) +'"><a href="#!"><i class="material-icons">chevron_left</i></a></li>';
             for (var i = 1;i <= Math.ceil(prods.length/16);i++) {
               html = html + '<li class="updatePage '+ (i == page ? "active orange darken-3" : "waves-effect") +'" data-updated-page="'+ i +'"><a href="#!">'+ i +'</a></li>';
