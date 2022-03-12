@@ -18,6 +18,7 @@
           <div class="container">
             <a href="index.html"><img src="img/Logo.png" class="brand-logo" style="height: 40px; margin-top: 5px;" /></a>
             <ul id="nav-mobile" class="right" style="margin-top:-7px;">
+              <li><a id="resetCollectionsBtn">Reset Collections</a></li>
             </ul>
           </div>
         </div>
@@ -186,6 +187,13 @@
 
       $(".catButton").on("click", function() {
         populateList($(this).data("category"), 1);
+      });
+
+      $("#resetCollectionsBtn").on("click", function() {
+        db.delete();
+        db = new Localbase('db');
+        loadDatabase();
+        M.toast({html: 'Localbase collections have been reset.'});
       });
 
       function loadClicks() {
@@ -365,6 +373,12 @@
         var modalElems = document.querySelectorAll('.modal');
         var modalInstances = M.Modal.init(modalElems);
 
+        loadDatabase();
+
+        loadAnims();
+      });
+
+      function loadDatabase() {
         db.collection('prods').get().then(prods => {
           if (prods.length == 0) {
             fetch("products.json").then(res => res.json()).then(data => {
@@ -398,9 +412,7 @@
             pickRandom();
           }
         });
-
-        loadAnims();
-      });
+      }
 
       function loadAnims() {
         setTimeout(function(){
