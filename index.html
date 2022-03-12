@@ -148,6 +148,10 @@
             <a id="addSalesCountBtn" data-product-id="id" href="#!" class="waves-effect waves-black btn orange darken-3 round-corners-low right">Add Sales Count</a>
           </div>
           <div class="col l6">
+            <div class="row right">
+              <ul id="modalPagination" class="pagination">
+              </ul>
+            </div>
             <table>
               <thead>
                 <tr>
@@ -190,10 +194,9 @@
       });
 
       $("#resetCollectionsBtn").on("click", function() {
-        db.delete();
-        db = new Localbase('db');
-        loadDatabase();
-        M.toast({html: 'Localbase collections have been reset.'});
+        db.delete().then(res => {
+          location.reload();
+        });
       });
 
       function loadClicks() {
@@ -210,17 +213,17 @@
             $("#modalPrice").text(prod["price"]);
             $("#modalDesc").text(prod["description"]);
             $("#modalImg").attr("src", prod["image"]);
-            loadSales(id);
+            loadSales(id, 1);
           });
 
         });
       }
 
-      function loadSales(id) {
+      function loadSales(id, page) {
         $("#modalTBody").html("");
         var c = "salesCount-" + id;
         db.collection(c).get().then(sc => {
-          for (var i = 0;i < sc.length;i++) {
+          for (var i = 5*(parseInt(page)-1);i < sc.length && i < 5*parseInt(page);i++) {
 
             var html = `
                 <tr>
@@ -232,6 +235,7 @@
 
             $("#modalTBody").append(jQuery.parseHTML(html));
           }
+          loadModalPagination(id, page);
         });
       }
 
@@ -245,7 +249,7 @@
             date: date,
             amount: amount
           }).then(res => {
-            loadSales(id);
+            loadSales(id, Math.ceil((sc.length+1)/5));
             M.toast({html: 'Sales have been added.'});
           });
         });
@@ -314,6 +318,27 @@
 
           $("#listPagination").append(jQuery.parseHTML(html));
           loadPageClicks();
+        });
+      }
+
+      function loadModalPagination(prodId, page) {
+        $("#modalPagination").html("");
+        db.collection("salesCount-" + prodId).get().then(sc => {
+            var html = '<li class="'+ (page==1 ? "disabled" : "waves-effect") +' updateSales" data-updated-page="'+ (parseInt(page)-1) +'"><a href="#!"><i class="material-icons">chevron_left</i></a></li>';
+            for (var i = 1;i <= Math.ceil(sc.length/5);i++) {
+              html = html + '<li class="updateSales '+ (i == page ? "active orange darken-3" : "waves-effect") +'" data-updated-page="'+ i +'"><a href="#!">'+ i +'</a></li>';
+            }
+          html = html + '<li class="updateSales '+ (Math.ceil(sc.length/5)==page ? "disabled" : "waves-effect") +'" data-updated-page="'+ (parseInt(page)+1) +'"><a href="#!"><i class="material-icons">chevron_right</i></a></li>';
+
+          $("#modalPagination").append(jQuery.parseHTML(html));
+          loadSaleClicks(prodId);
+        });
+      }
+
+      function loadSaleClicks(prodId) {
+        $(".updateSales").on("click", function() {
+          if ($(this).hasClass("disabled")) return;
+          loadSales(prodId, $(this).data("updatedPage"));
         });
       }
 
