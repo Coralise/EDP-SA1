@@ -18,131 +18,75 @@
           <div class="container">
             <a href="index.html"><img src="img/Logo.png" class="brand-logo" style="height: 40px; margin-top: 5px;" /></a>
             <ul id="nav-mobile" class="right" style="margin-top:-7px;">
-              <li><a href="https://github.com/Coralise/CustomBansPlus/wiki"><i class="material-icons left red-text text-accent-4">book</i>Wiki</a></li>
-              <li><a href="download.html"><i class="material-icons left red-text text-accent-4">file_download</i>Download Now</a></li>
+              <li><a href="https://github.com/Coralise/CustomBansPlus/wiki"><i class="material-icons left grey-text">book</i>Wiki</a></li>
+              <li><a href="download.html"><i class="material-icons left grey-text">file_download</i>Download Now</a></li>
             </ul>
           </div>
         </div>
       </nav>
     </div>
 
-    <div id="title-parallax" class="parallax-container grey darken-4 transition-medium" style="height:560px;">
+    <div id="title-parallax" class="parallax-container grey darken-4 transition-medium" style="height:560px;margin-top:-10px;">
       <div class="container valign height-100">
         <div id="particles-js" style="height:100%;width:100%;position:absolute;"></div>
-        <h3 id="title-text" class="grey-text text-lighten-3 monospace center opacity-0 transition-medium">Custom Bans Plus</h3>
+        <div class="center">
+          <h3 id="title-text" class="grey-text text-lighten-3 monospace center opacity-0 transition-medium">The Gun Store</h3>
+          <span id="subtitle-text" class="opacity-0 transition-medium">The go-to store for all your gun-loving needs.</span>
+        </div>
       </div>
       <div class="parallax">
         <!-- <img src="img/particles.gif" /> -->
-        <img src="img/Parallax_Background.png" />
+        <img src="img/Gun3.jpg" />
       </div>
     </div>
-
-    <div class="container top-margin-big">
-      <div class="row">
-        <div class="col l6 m12">
-          <h4 class="red-text text-accent-4 monospace bold text-shadow">About</h4>
-          <p class="indent">
-            Custom Bans Plus is an All-In-One Ban Management Plugin for you Minecraft Server with all the features you need in a ban manager and more. It has a completely customizable system that gives users the freedom of how they want their appearance to look as part of their server's overall aesthetics. The plugin also has a unique feature which makes organizing your server's protocols and procedures way easier.
-          </p>
-        </div>
-        <div class="col l6 m12">
-          <h4 class="red-text text-accent-4 monospace bold text-shadow">Plugin Showcase</h4>
-          <iframe width="460" height="259" src="https://www.youtube.com/embed/fxvxKAw0tWI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-
-    <div class="container top-margin">
-      <h4 class="red-text text-accent-4 monospace bold text-shadow">Features</h4>
-      <div class="row">
-        <div class="col l6 m12">
-          <h6 class="red-text text-accent-4 monospace bold text-shadow">General</h6>
-          <ul class="browser-default red-bullets">
-            <li>Ban, IP Ban, Kick, Mute, and Warn a player.</li>
-            <li>[-s] option to punish/unpunish a player silently.</li>
-            <li>Alternate Account Retainment.</li>
-            <li>Full <a href="https://github.com/Coralise/CustomBansPlus/wiki/CustomBansPlus-API" class="blue-text text-accent-3 tooltipped" data-position="bottom" data-tooltip="Click for more info.">API Support</a> for Developers.</li>
-          </ul>
-        </div>
-        <div class="col l6 m12">
-          <h6 class="red-text text-accent-4 monospace bold text-shadow">Highlights</h6>
-          <ul class="browser-default red-bullets">
-            <li>Fully Customizable Temp Ban, Perm Ban, and Kick pages.</li>
-            <li>Fully Customizable announcers.</li>
-            <li>All Commands come with an easy Tab Completion method.</li>
-            <li>Extremely user-friendly GUI for almost all commands.</li>
-            <li>A <a href="https://github.com/Coralise/CustomBansPlus/wiki/Severity-System" class="blue-text text-accent-3 tooltipped" data-position="bottom" data-tooltip="Click for more info.">Severity system</a> for punishment organization.</li>
-            <li>Super easy setup.</li>
-            <li>Player Report Function.</li>
-            <li>Premium or Cracked Server Compatibility.</li>
-            <li><a href="https://github.com/Coralise/CustomBansPlus/wiki/DiscordSRV-Setup-Guide" class="blue-text text-accent-3 tooltipped" data-position="bottom" data-tooltip="Click for more info.">DiscordSRV</a>
-             and <a href="https://github.com/Coralise/CustomBansPlus/wiki/PlaceholderAPI" class="blue-text text-accent-3 tooltipped" data-position="bottom" data-tooltip="Click for more info.">PlaceholderAPI</a> Support.</li>
-          </ul>
+    
+    <div class="container top-margin right-align">
+      <div style="width:50%;margin-left:25%;">
+        <div class="card horizontal grey darken-4 hoverable">
+          <div class="card-stacked">
+            <div class="card-content">
+              <span class="card-title">Random Arsenal</span>
+              <div id="randName" class="right">Name</div><br>
+              <div id="randPrice" class="right">Price</div>
+            </div>
+            <div class="card-action left-align">
+              <a id="randBtn" class="viewProduct btn-small orange darken-3 round-corners-low waves-effect waves-black modal-trigger" href="#productViewer"><i class="material-icons left">add_shopping_cart</i>Buy now</a>
+            </div>
+          </div>
+          <div class="card-image">
+            <img id="randImage" src="">
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="container top-margin">
-      <h4 class="red-text text-accent-4 monospace bold text-shadow">More Information</h4>
-      <div class="row">
-        <div class="col l4 offset-l2 m6">
-
-          <a href="download.html" class="grey darken-4 sans-serif white-text">
-            <div class="card horizontal grey darken-4 hoverable waves-effect waves-red height-100">
-              <div class="card-stacked">
-                <div class="card-content">
-                  <span class="card-title red-text text-accent-4 monospace bold text-shadow">Download Now</span>
-                  <p>Download different CBP versions compatible for any MC Version. (Bungee coming soon!)</p>
-                </div>
-              </div>
-            </div>
-          </a>
-
-        </div>
-        <div class="col l4 m6">
-
-          <a href="https://github.com/Coralise/CustomBansPlus/wiki/Getting-Started" class="grey darken-4 sans-serif white-text">
-            <div class="card horizontal grey darken-4 hoverable waves-effect waves-red height-100">
-              <div class="card-stacked">
-                <div class="card-content">
-                  <span class="card-title red-text text-accent-4 monospace bold text-shadow">Get Started</span>
-                  <p>An easy setup guide to get you started with the plugin.</p>
-                </div>
-              </div>
-            </div>
-          </a>
-          
-        </div>
+    <div class="container">
+      <div class="carousel">
+        <a class="carousel-item center white-text catButton" data-category="all"><div>
+          <img src="img/Gun.jpg" style="width:100%;">
+          <span>All Firearms</span>
+        </div></a>
+        <a class="carousel-item center white-text catButton" data-category="handguns"><div>
+          <img src="img/Gun.jpg" style="width:100%;">
+          <span>Handguns</span>
+        </div></a>
+        <a class="carousel-item center white-text catButton" data-category="rifles"><div>
+          <img src="img/Gun.jpg" style="width:100%;">
+          <span>Rifles</span>
+        </div></a>
+        <a class="carousel-item center white-text catButton" data-category="submachineGuns"><div>
+          <img src="img/Gun.jpg" style="width:100%;">
+          <span>Submachine Guns</span>
+        </div></a>
+        <a class="carousel-item center white-text catButton" data-category="assaultRifles"><div>
+          <img src="img/Gun.jpg" style="width:100%;">
+          <span>Assault Rifles</span>
+        </div></a>
       </div>
-      <div class="row">
-        <div class="col l4 offset-l2 m6">
+    </div>
 
-          <a href="https://github.com/Coralise/CustomBansPlus/wiki" class="grey darken-4 sans-serif white-text">
-            <div class="card horizontal grey darken-4 hoverable waves-effect waves-red height-100">
-              <div class="card-stacked">
-                <div class="card-content">
-                  <span class="card-title red-text text-accent-4 monospace bold text-shadow">CBP Wiki</span>
-                  <p>Plugin commands, permissions, YAML files, 3rd-party plugins support, and many more can be found here.</p>
-                </div>
-              </div>
-            </div>
-          </a>
-          
-        </div>
-        <div class="col l4 m6">
-
-          <a href="https://github.com/Coralise/CustomBansPlus/wiki/CustomBansPlus-API" class="grey darken-4 sans-serif white-text">
-            <div class="card horizontal grey darken-4 hoverable waves-effect waves-red height-100">
-              <div class="card-stacked">
-                <div class="card-content">
-                  <span class="card-title red-text text-accent-4 monospace bold text-shadow">CustomBansPlus API</span>
-                  <p>A developer's guide to using the Custom Bans Plus API.</p>
-                </div>
-              </div>
-            </div>
-          </a>
-          
-        </div>
+    <div class="container">
+      <div id="divList" class="row">
       </div>
     </div>
 
@@ -150,7 +94,7 @@
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <h5 class="red-text text-accent-4 monospace bold text-shadow">Support our Developers! 💕</h5>
+            <h5 class="grey-text monospace bold text-shadow">Support our Developers! 💕</h5>
             <p class="grey-text text-lighten-4">If you like our plugins, feel free to leave a coffee for one of us! It'll surely make our day happier.</p>
             <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support us with a coffee!', '#29abe0', 'A0A838CB2');kofiwidget2.draw();</script> 
             <div id="donate-button-container" class="top-margin">
@@ -170,7 +114,7 @@
               </div>
           </div>
           <div class="col l4 offset-l2 s12">
-            <h5 class="red-text text-accent-4 monospace bold text-shadow">Links</h5>
+            <h5 class="grey-text monospace bold text-shadow">Links</h5>
             <ul>
               <li><a class="blue-text text-darken-3" href="https://discord.io/CoralReef" target=”_blank”>Discord</a></li>
               <li><a class="deep-purple-text text-darken-1" href="https://github.com/Coralise/CustomBansPlus/wiki" target=”_blank”>Github Wiki</a></li>
@@ -187,13 +131,199 @@
       </div>
     </footer>
 
+    <div id="productViewer" class="modal grey darken-4">
+      <div class="modal-content">
+        <div class="row">
+          <div class="col l6">
+            <img id="modalImg" src="img/products/beretta92.jpg" class="width-100">
+            <h5 id="modalName">Name</h5>
+            <p id="modalDesc">Description</p>
+            <p id="modalPrice">₱Price</p>
+            <a id="minusOneBtn" href="#!" class="waves-effect waves-black btn red darken-3 round-corners-left-mid"><i class="material-icons">exposure_minus_1</i></a>
+            <span id="saleCount" class="btn square-corners grey darken-3">1</span>
+            <a id="plusOneBtn" href="#!" class="waves-effect waves-black btn green darken-3 round-corners-right-mid"><i class="material-icons">exposure_plus_1</i></a>
+            <a id="addSalesCountBtn" data-product-id="id" href="#!" class="waves-effect waves-black btn orange darken-3 round-corners-low right">Add Sales Count</a>
+          </div>
+          <div class="col l6">
+            <table>
+              <thead>
+                <tr>
+                    <th style="width:33%">ID</th>
+                    <th style="width:33%">Date</th>
+                    <th style="width:33%">Amount</th>
+                </tr>
+              </thead>
+      
+              <tbody id="modalTBody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- <script type="text/javascript" src="data.json"></script> -->
     <script type="text/javascript" src="particles.js-master/particles.min.js"></script>
     <script type="text/javascript" src="js/TweenMax.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/localbase/dist/localbase.min.js"></script>
     <script>
+      var db = new Localbase('db');
       var data;
+
+      $("#plusOneBtn").on("click", function() {
+        $("#saleCount").text(parseInt($("#saleCount").text())+1);
+        $("#minusOneBtn").removeClass("disabled");
+      });
+
+      $("#minusOneBtn").on("click", function() {
+        $("#saleCount").text(parseInt($("#saleCount").text())-1);
+        if ($("#saleCount").text()==1) $("#minusOneBtn").addClass("disabled");
+      });
+
+      $(".catButton").on("click", function() {
+        populateList($(this).data("category"));
+      });
+
+      function loadClicks() {
+        $(".viewProduct").on("click", function() {
+          $("#saleCount").text(1);
+          $("#minusOneBtn").addClass("disabled");
+
+          var id = $(this).data("productId");
+
+          $("#addSalesCountBtn").data("productId", id);
+          
+          db.collection("prods").doc({ id: id}).get().then(prod => {
+            $("#modalName").text(prod["name"]);
+            $("#modalPrice").text(prod["price"]);
+            $("#modalDesc").text(prod["description"]);
+            $("#modalImg").attr("src", prod["image"]);
+          });
+
+          loadSales(id);
+        });
+      }
+
+      function loadSales(id) {
+        var c = "salesCount-" + id;
+        db.collection(c).get().then(sc => {
+          $("#modalTBody").html("");
+          if (sc == null) return;
+          for (var i = 0;i < sc.length;i++) {
+
+            var html = `
+                <tr>
+                  <td>`+ sc[i]["id"] +`</td>
+                  <td>`+ sc[i]["date"] +`</td>
+                  <td>`+ sc[i]["amount"] +`</td>
+                </tr>
+            `;
+
+            $("#modalTBody").append(jQuery.parseHTML(html));
+          }
+        });
+      }
+
+      function addSalesCount(id, amount) {
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate() + ' ' + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        db.collection("salesCount-" + id).get().then(sc => {
+          var scId = sc.length+1;
+          db.collection("salesCount-" + id).add({
+            id: scId,
+            date: date,
+            amount: amount
+          }).then(res => {
+            loadSales(id);
+            M.toast({html: 'Sales have been added.'});
+          });
+        });
+      }
+
+      $("#addSalesCountBtn").on("click", function() {addSalesCount($(this).data("productId"), $("#saleCount").text())});
+      
+      // <div class="card sticky-action grey darken-3 hoverable tooltipped" data-position="top" data-tooltip="Click for more info">
+      //   <div class="card-image waves-effect waves-block waves-light">
+      //     <img class="activator" src="img/products/beretta92.jpg">
+      //   </div>
+      //   <div class="card-content activator">
+      //     <p class="activator">Name</p>
+      //     <p class="activator">₱Price</p>
+      //   </div>
+      //   <div class="card-reveal grey darken-3">
+      //     <span class="card-title orange-text text-darken-3">Name<i class="material-icons right white-text">close</i></span>
+      //     <p>Description</p>
+      //     <p>₱Price</p>
+      //   </div>
+      //   <div class="card-action">
+      //     <a class="btn-small round-corners-mid orange darken-3 waves-effect waves-black viewProduct modal-trigger" href="#productViewer" data-product-id="id"><i class="material-icons left ">add_shopping_cart</i>Buy Now</a>
+      //   </div>
+      // </div>
+
+      function populateList(category) {
+        $("#divList").html("");
+        db.collection("prods").get().then(prods => {
+          var rows = [];
+          for (var i = 0,j = 0;i < prods.length && i-j < 16;i++) {
+
+            if (category != "all" && prods[i]["category"] != category) {
+              j++;
+              continue;
+            }
+
+            if (i%4 == 0) {
+              rows.push($("<div></div>").addClass("row"));
+            }
+
+            rows[rows.length-1].append(productCard(prods[i]));
+
+          }
+
+          for (var i = 0;i < rows.length;i++) $("#divList").append(rows[i]);
+          var elems = document.querySelectorAll('.tooltipped');
+          var instances = M.Tooltip.init(elems);
+          loadClicks();
+        });
+      }
+
+      function productCard(prod) {
+        var html = `
+          <div class="col l3">
+            <div class="card sticky-action grey darken-3 hoverable">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator tooltipped" data-position="top" data-tooltip="Click for more info" src="`+ prod["image"] +`">
+              </div>
+              <div class="card-content activator">
+                <p class="activator">`+ prod["name"] +`</p>
+                <p class="activator">`+ prod["price"] +`</p>
+              </div>
+              <div class="card-reveal grey darken-3">
+                <span class="card-title orange-text text-darken-3">`+ prod["name"] +`<i class="material-icons right white-text">close</i></span>
+                <p>`+ prod["description"] +`</p>
+                <p>`+ prod["price"] +`</p>
+              </div>
+              <div class="card-action">
+                <a class="btn-small round-corners-mid orange darken-3 waves-effect waves-black viewProduct modal-trigger" href="#productViewer" data-product-id=`+ prod["id"] +`><i class="material-icons left ">add_shopping_cart</i>Buy Now</a>
+              </div>
+            </div>
+          </div>
+        `;
+
+        return jQuery.parseHTML(html);
+      }
+
+      function pickRandom() {
+        db.collection("prods").get().then(prods => {
+          var prod = prods[Math.floor(Math.random() * prods.length)];
+
+          $("#randName").text(prod["name"]);
+          $("#randPrice").text(prod["price"]);
+          $("#randImage").attr("src", prod["image"]);
+          $("#randBtn").data("productId", prod["id"]);
+        });
+      }
 
       document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.parallax');
@@ -202,7 +332,49 @@
         var instances = M.Sidenav.init(elems);
         var elems = document.querySelectorAll('.tooltipped');
         var instances = M.Tooltip.init(elems);
+        var elems = document.querySelectorAll('.carousel');
+        var instances = M.Carousel.init(elems);
+        var modalElems = document.querySelectorAll('.modal');
+        var modalInstances = M.Modal.init(modalElems);
 
+        db.collection('prods').get().then(prods => {
+          if (prods.length == 0) {
+            fetch("products.json").then(res => res.json()).then(data => {
+              for (var i = 0;i < data.length;i++) {
+                if (i != data.length-1) {
+                  db.collection("prods").add({
+                    id: data[i]["id"],
+                    name: data[i]["name"],
+                    price: data[i]["price"],
+                    image: data[i]["image"],
+                    description: data[i]["description"],
+                    category: data[i]["category"]
+                  });
+                } else {
+                  db.collection("prods").add({
+                    id: data[i]["id"],
+                    name: data[i]["name"],
+                    price: data[i]["price"],
+                    image: data[i]["image"],
+                    description: data[i]["description"],
+                    category: data[i]["category"]
+                  }).then(res => {
+                    populateList("all");
+                    pickRandom();
+                  })
+                }
+              }
+            });
+          } else {
+            populateList("all");
+            pickRandom();
+          }
+        });
+
+        loadAnims();
+      });
+
+      function loadAnims() {
         setTimeout(function(){
           document.getElementById("title-parallax").classList.remove("grey");
           document.getElementById("title-parallax").classList.remove("darken-4");
@@ -212,6 +384,7 @@
 
         setTimeout(function() {
           $("#title-text").removeClass("opacity-0");
+          $("#subtitle-text").removeClass("opacity-0");
           setTimeout(function() {
             $("#title-text").removeClass("transition-medium");
 
@@ -228,10 +401,8 @@
           }, 1000);
         }, 1500);
 
-        particlesJS.load('particles-js', 'particles.js-master/particlesjs-config.json', function() {
-          console.log('callback - particles.js config loaded');
-        });
-      });
+        particlesJS.load('particles-js', 'particles.js-master/particlesjs-config.json');
+      }
       
       function doSetTimeout(i, j, text) {
         setTimeout(function() {

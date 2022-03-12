@@ -22,6 +22,10 @@
     height: 80%;
 }
 
+.width-100 {
+    width: 100%;
+}
+
 .valign {
     display: flex;
     justify-content: center;
@@ -134,12 +138,24 @@ input.page[type=number] {
     }
 }
 
+.square-corners {
+    border-radius: 0px;
+}
+
 .round-corners-low {
     border-radius: 10px;
 }
 
 .round-corners-mid {
     border-radius: 20px;
+}
+
+.round-corners-left-mid {
+    border-radius: 20px 0px 0px 20px;
+}
+
+.round-corners-right-mid {
+    border-radius: 0px 20px 20px 0px;
 }
 
 .round-corners-high {
@@ -180,4 +196,19 @@ text-shadow forked from: https://codepen.io/teetteet/details/dFICw#forkline
   
 strong{
     font-size:200px;
+}
+
+.br-low {
+    display: block;
+    margin: 0em;
+}
+
+.br-mid {
+    display: block;
+    margin: 10px 0;
+}
+
+.br-high {
+    display: block;
+    margin: 15px 0;
 }

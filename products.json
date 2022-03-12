@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "Beretta 92",
+        "price": "₱899.99",
+        "image": "img/products/beretta92.jpg",
+        "description": "A police officer's standard issue equipment.",
+        "category": "handguns"
+    },
+    {
+        "id": 2,
+        "name": ".44 Magnum",
+        "price": "₱1299.99",
+        "image": "img/products/44magnum.jpg",
+        "description": "A rimmed, large-bore cartridge originally designed for revolvers and quickly adopted for carbines and rifles.",
+        "category": "handguns"
+    },
+    {
+        "id": 3,
+        "name": "Glock 19",
+        "price": "₱1099.99",
+        "image": "img/products/glock19.jpg",
+        "description": "Ideal for a versatile role thanks to its reduced dimensions when compared to the standard sized option.",
+        "category": "handguns"
+    },
+    {
+        "id": 4,
+        "name": "Colt M45A1",
+        "price": "₱1599.99",
+        "image": "img/products/coltm45a1.jpg",
+        "description": "The M45A1 features durable Decobond™ brown coating and an M1913-spec Picatinny rail for mounting lights, lasers, and other accessories.",
+        "category": "handguns"
+    },
+    {
+        "id": 5,
+        "name": "Colt M1911",
+        "price": "₱1599.99",
+        "image": "img/products/colt1911.jpg",
+        "description": "A single-action, semi-automatic, magazine-fed, recoil-operated pistol chambered for the .45 ACP cartridge.",
+        "category": "handguns"
+    }
+]
