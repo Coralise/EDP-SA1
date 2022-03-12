@@ -40,7 +40,7 @@
     </div>
     
     <div class="container top-margin right-align">
-      <div style="width:50%;margin-left:25%;">
+      <div id="randDiv" class="opacity-0 transition-medium ease-out" style="width:50%;margin-left:10%;">
         <div class="card horizontal grey darken-4 hoverable">
           <div class="card-stacked">
             <div class="card-content">
@@ -65,19 +65,19 @@
           <img src="img/arsenal.jpg" style="width:100%;">
           <span>All Firearms</span>
         </div></a>
-        <a class="carousel-item center white-text catButton" data-category="handguns"><div>
+        <a class="carousel-item center white-text catButton" data-category="Handgun"><div>
           <img src="img/Gun.jpg" style="width:100%;">
           <span>Handguns</span>
         </div></a>
-        <a class="carousel-item center white-text catButton" data-category="rifles"><div>
+        <a class="carousel-item center white-text catButton" data-category="Rifle"><div>
           <img src="img/rifle.jpg" style="width:100%;">
           <span>Rifles</span>
         </div></a>
-        <a class="carousel-item center white-text catButton" data-category="submachineGuns"><div>
+        <a class="carousel-item center white-text catButton" data-category="Submachine Gun"><div>
           <img src="img/submachinegun.jpg" style="width:100%;">
           <span>Submachine Guns</span>
         </div></a>
-        <a class="carousel-item center white-text catButton" data-category="assaultRifles"><div>
+        <a class="carousel-item center white-text catButton" data-category="Assault Rifle"><div>
           <img src="img/assaultrifle.jpg" style="width:100%;">
           <span>Assault Rifles</span>
         </div></a>
@@ -87,11 +87,17 @@
     <div class="container">
       <div class="row">
         <div class="right">
-          <ul id="listPagination" class="pagination">
+          <ul class="pagination listPagination">
           </ul>
         </div>
       </div>
       <div id="divList" class="row">
+      </div>
+      <div class="row">
+        <div class="right">
+          <ul class="pagination listPagination">
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -99,7 +105,7 @@
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <h5 class="grey-text monospace bold text-shadow">Support the Developer!</h5>
+            <h5 class="grey-text monospace bold text-shadow">Support the Developer.</h5>
             <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Send us some coffee!', '#29abe0', 'A0A838CB2');kofiwidget2.draw();</script> 
             <div id="donate-button-container" class="top-margin">
               <div id="donate-button"></div>
@@ -139,6 +145,7 @@
           <div class="col l6">
             <img id="modalImg" src="img/products/beretta92.jpg" class="width-100">
             <h5 id="modalName">Name</h5>
+            <p id="modalCategory">Category</p>
             <p id="modalDesc">Description</p>
             <p id="modalPrice">₱Price</p>
             <a id="minusOneBtn" href="#!" class="waves-effect waves-black btn red darken-3 round-corners-left-mid"><i class="material-icons">exposure_minus_1</i></a>
@@ -147,7 +154,7 @@
             <a id="addSalesCountBtn" data-product-id="id" href="#!" class="waves-effect waves-black btn orange darken-3 round-corners-low right">Add Sales Count</a>
           </div>
           <div class="col l6">
-            <div class="row right">
+            <div class="right">
               <ul id="modalPagination" class="pagination">
               </ul>
             </div>
@@ -211,6 +218,7 @@
             $("#modalName").text(prod["name"]);
             $("#modalPrice").text(prod["price"]);
             $("#modalDesc").text(prod["description"]);
+            $("#modalCategory").text(prod["category"]);
             $("#modalImg").attr("src", prod["image"]);
             loadSales(id, 1);
           });
@@ -305,8 +313,27 @@
         });
       }
 
+      $(document).on("scroll", function() {
+            if (checkVisible($("#randDiv")) && $("#randDiv").hasClass("opacity-0")) {
+              $("#randDiv").removeClass("opacity-0");
+              $("#randDiv").css("margin-left", "25%");
+            }
+      });
+
+      function checkVisible( elm, evalType ) {
+        evalType = evalType || "visible";
+
+        var vpH = $(window).height(), // Viewport Height
+            st = $(window).scrollTop(), // Scroll Top
+            y = $(elm).offset().top,
+            elementHeight = $(elm).height();
+
+        if (evalType === "visible") return ((y < (vpH + st - vpH*.30)) && (y > (st - elementHeight + st*.30)));
+        if (evalType === "above") return ((y < (vpH + st)));
+      }
+
       function loadPagination(page) {
-        $("#listPagination").html("");
+        $(".listPagination").html("");
         db.collection("prods").get().then(prods => {
             if (gCat != "all") prods = prods.filter(p=>p["category"] == gCat);
             var html = '<li class="'+ (page==1 ? "disabled" : "waves-effect") +' updatePage" data-updated-page="'+ (parseInt(page)-1) +'"><a href="#!"><i class="material-icons">chevron_left</i></a></li>';
@@ -315,7 +342,7 @@
             }
           html = html + '<li class="updatePage '+ (Math.ceil(prods.length/16)==page ? "disabled" : "waves-effect") +'" data-updated-page="'+ (parseInt(page)+1) +'"><a href="#!"><i class="material-icons">chevron_right</i></a></li>';
 
-          $("#listPagination").append(jQuery.parseHTML(html));
+          $(".listPagination").append(jQuery.parseHTML(html));
           loadPageClicks();
         });
       }
