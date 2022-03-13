@@ -386,8 +386,12 @@
                 <p class="activator">`+ prod["name"] +`</p>
                 <p class="activator">`+ prod["price"] +`</p>
               </div>
-              <div class="card-reveal grey darken-3">
-                <span class="card-title orange-text text-darken-3">`+ prod["name"] +`<i class="material-icons right white-text">close</i></span>
+              <div class="card-reveal grey darken-3 overflow my-scrollbar">
+                <div class="row">
+                  <div class="col s10 orange-text text-darken-3">`+ prod["name"] +`</div>
+                  <div class="col s2"><span class="card-title"><i class="material-icons right white-text">close</i></span></div>
+                </div>
+                <p>`+ prod["category"] +`</p>
                 <p>`+ prod["description"] +`</p>
                 <p>`+ prod["price"] +`</p>
               </div>
