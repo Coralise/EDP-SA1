@@ -224,3 +224,31 @@ strong{
     display: block;
     margin: 15px 0;
 }
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.overflow {
+    overflow: overlay;
+}
+
+.my-scrollbar::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.my-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0,0,0,.2)
+}
+
+/* Handle */
+.my-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255,145,0,0.2) ;
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+.my-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,145,0,1) ;
+}
