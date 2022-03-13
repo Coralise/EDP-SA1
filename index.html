@@ -335,10 +335,20 @@
       function loadPagination(page) {
         $(".listPagination").html("");
         db.collection("prods").get().then(prods => {
-            if (gCat != "all") prods = prods.filter(p=>p["category"] == gCat);
-            var html = '<li class="'+ (page==1 ? "disabled" : "waves-effect") +' updatePage" data-updated-page="'+ (parseInt(page)-1) +'"><a href="#!"><i class="material-icons">chevron_left</i></a></li>';
-            for (var i = 1;i <= Math.ceil(prods.length/16);i++) {
-              html = html + '<li class="updatePage '+ (i == page ? "active orange darken-3" : "waves-effect") +'" data-updated-page="'+ i +'"><a href="#!">'+ i +'</a></li>';
+          if (gCat != "all") prods = prods.filter(p=>p["category"] == gCat);
+          var html = '<li class="'+ (page==1 ? "disabled" : "waves-effect") +' updatePage" data-updated-page="'+ (parseInt(page)-1) +'"><a href="#!"><i class="material-icons">chevron_left</i></a></li>';
+            if (Math.ceil(prods.length/16) <= 8) {
+              for (var i = 1;i <= Math.ceil(prods.length/16);i++) {
+                html = html + '<li class="updatePage '+ (i == page ? "active orange darken-3" : "waves-effect") +'" data-updated-page="'+ i +'"><a href="#!">'+ i +'</a></li>';
+              }
+            } else {
+                html = html + '<li class="updatePage '+ (1 == page ? "active orange darken-3" : "waves-effect") +'" data-updated-page="1"><a href="#!">1</a></li>';
+                html = html + '<li><a href="#!">...</a></li>';
+                if (![1,Math.ceil(prods.length/16)].includes(page)) {
+                  html = html + '<li class="updatePage active orange darken-3" data-updated-page="'+ page +'"><a href="#!">'+ page +'</a></li>';
+                  html = html + '<li><a href="#!">...</a></li>';
+                }
+                html = html + '<li class="updatePage '+ (Math.ceil(prods.length/16) == page ? "active orange darken-3" : "waves-effect") +'" data-updated-page="'+ Math.ceil(sc.length/16) +'"><a href="#!">'+ Math.ceil(sc.length/16) +'</a></li>';
             }
           html = html + '<li class="updatePage '+ (Math.ceil(prods.length/16)==page ? "disabled" : "waves-effect") +'" data-updated-page="'+ (parseInt(page)+1) +'"><a href="#!"><i class="material-icons">chevron_right</i></a></li>';
 
@@ -351,10 +361,20 @@
         $("#modalPagination").html("");
         db.collection("salesCount-" + prodId).get().then(sc => {
             var html = '<li class="'+ (page==1 ? "disabled" : "waves-effect") +' updateSales" data-updated-page="'+ (parseInt(page)-1) +'"><a href="#!"><i class="material-icons">chevron_left</i></a></li>';
-            for (var i = 1;i <= Math.ceil(sc.length/5);i++) {
-              html = html + '<li class="updateSales '+ (i == page ? "active orange darken-3" : "waves-effect") +'" data-updated-page="'+ i +'"><a href="#!">'+ i +'</a></li>';
+            if (Math.ceil(sc.length/5) <= 8) {
+              for (var i = 1;i <= Math.ceil(sc.length/5);i++) {
+                html = html + '<li class="updateSales '+ (i == page ? "active orange darken-3" : "waves-effect") +'" data-updated-page="'+ i +'"><a href="#!">'+ i +'</a></li>';
+              }
+            } else {
+                html = html + '<li class="updateSales '+ (1 == page ? "active orange darken-3" : "waves-effect") +'" data-updated-page="1"><a href="#!">1</a></li>';
+                html = html + '<li><a href="#!">...</a></li>';
+                if (![1,Math.ceil(sc.length/5)].includes(page)) {
+                  html = html + '<li class="updateSales active orange darken-3" data-updated-page="'+ page +'"><a href="#!">'+ page +'</a></li>';
+                  html = html + '<li><a href="#!">...</a></li>';
+                }
+                html = html + '<li class="updateSales '+ (Math.ceil(sc.length/5) == page ? "active orange darken-3" : "waves-effect") +'" data-updated-page="'+ Math.ceil(sc.length/5) +'"><a href="#!">'+ Math.ceil(sc.length/5) +'</a></li>';
             }
-          html = html + '<li class="updateSales '+ (Math.ceil(sc.length/5)==page ? "disabled" : "waves-effect") +'" data-updated-page="'+ (parseInt(page)+1) +'"><a href="#!"><i class="material-icons">chevron_right</i></a></li>';
+          html = html + '<li class="updateSales '+ (Math.ceil(sc.length/5)==page || Math.ceil(sc.length/5)==1 ? "disabled" : "waves-effect") +'" data-updated-page="'+ (parseInt(page)+1) +'"><a href="#!"><i class="material-icons">chevron_right</i></a></li>';
 
           $("#modalPagination").append(jQuery.parseHTML(html));
           loadSaleClicks(prodId);
